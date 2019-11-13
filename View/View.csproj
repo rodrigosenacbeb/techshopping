@@ -96,6 +96,10 @@
     <None Include="Resources\tick.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{50c87318-ff4c-4b72-b605-dea5c316eac4}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{5ebe7c58-f57f-4fbf-9641-3984ef4ff348}</Project>
       <Name>Model</Name>

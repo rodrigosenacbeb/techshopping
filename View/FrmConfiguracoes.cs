@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Model;
+using Controller;
 
 namespace View
 {
@@ -9,11 +10,12 @@ namespace View
         public FrmConfiguracoes()
         {
             InitializeComponent();
+            Carregar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if(btnEditar.Text == "Editar")
+            if (btnEditar.Text == "Editar")
             {
                 btnEditar.Text = "Salvar";
                 btnEditar.Image = Properties.Resources.tick;
@@ -28,6 +30,23 @@ namespace View
                     configuracao.NomeBanco = txtBanco.Text.Trim();
                     configuracao.UsuarioBanco = txtUsuario.Text.Trim();
                     configuracao.SenhaBanco = txtSenha.Text.Trim();
+
+                    ControllerConfiguracao controllerConfiguracao = new ControllerConfiguracao();
+
+                    try
+                    {
+                        bool retorno = controllerConfiguracao.Salvar(configuracao);
+
+                        if (retorno == true)
+                        {
+                            MessageBox.Show("Configurações salva com sucesso!");
+                            Close();
+                        }
+                    }
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show("Não foi possível salvar as configurações. Detalhes: " + erro.Message);
+                    }
                 }
             }
         }
@@ -69,6 +88,18 @@ namespace View
             }
 
             return true;
+        }
+
+        void Carregar()
+        {
+            ControllerConfiguracao controllerConfiguracao = new ControllerConfiguracao();
+            Configuracao configuracao = new Configuracao();
+            configuracao = controllerConfiguracao.Carregar();
+
+            txtServidor.Text = configuracao.ServidorBanco;
+            txtBanco.Text = configuracao.NomeBanco;
+            txtUsuario.Text = configuracao.UsuarioBanco;
+            txtSenha.Text = configuracao.SenhaBanco;
         }
     }
 }
