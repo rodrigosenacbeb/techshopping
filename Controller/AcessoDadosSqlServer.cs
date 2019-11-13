@@ -16,12 +16,13 @@ namespace Controller
             Properties.Settings.Default.UsuarioBanco,
             Properties.Settings.Default.SenhaBanco);
 
-        public SqlConnection Conectar()
-        {
-            SqlConnection conexao = new SqlConnection(parametrosConexao);
+        SqlConnection conexao = null;
 
+        public SqlConnection Conectar()
+        {           
             try
-            {                
+            {
+                conexao = new SqlConnection(parametrosConexao);
                 conexao.Open();
                 return conexao;
             }
@@ -32,7 +33,7 @@ namespace Controller
             }
         }
 
-        public void Fechar(SqlConnection conexao)
+        public void Fechar()
         {
             conexao.Close();
         }

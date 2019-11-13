@@ -50,7 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckbAtivo = new System.Windows.Forms.CheckBox();
             this.gbxInformacoesProduto = new System.Windows.Forms.GroupBox();
             this.gbxProdutosCadastrados = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -99,7 +99,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label5.Location = new System.Drawing.Point(551, 133);
+            this.label5.Location = new System.Drawing.Point(551, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 18);
             this.label5.TabIndex = 7;
@@ -110,7 +110,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label4.Location = new System.Drawing.Point(857, 132);
+            this.label4.Location = new System.Drawing.Point(857, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 18);
             this.label4.TabIndex = 6;
@@ -121,7 +121,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(693, 128);
+            this.label3.Location = new System.Drawing.Point(693, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 18);
             this.label3.TabIndex = 5;
@@ -145,7 +145,7 @@
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.PasswordChar = '*';
             this.txtValorUnitario.Size = new System.Drawing.Size(125, 29);
-            this.txtValorUnitario.TabIndex = 3;
+            this.txtValorUnitario.TabIndex = 6;
             // 
             // txtPreco
             // 
@@ -154,7 +154,7 @@
             this.txtPreco.Location = new System.Drawing.Point(857, 152);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(150, 29);
-            this.txtPreco.TabIndex = 2;
+            this.txtPreco.TabIndex = 8;
             // 
             // txtPercentualLucro
             // 
@@ -163,7 +163,7 @@
             this.txtPercentualLucro.Location = new System.Drawing.Point(696, 152);
             this.txtPercentualLucro.Name = "txtPercentualLucro";
             this.txtPercentualLucro.Size = new System.Drawing.Size(142, 29);
-            this.txtPercentualLucro.TabIndex = 1;
+            this.txtPercentualLucro.TabIndex = 7;
             // 
             // txtCodigoBarras
             // 
@@ -190,7 +190,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(103, 29);
-            this.txtCodigo.TabIndex = 8;
+            this.txtCodigo.TabIndex = 0;
             // 
             // label8
             // 
@@ -210,7 +210,7 @@
             this.txtDescricao.Location = new System.Drawing.Point(401, 78);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(606, 29);
-            this.txtDescricao.TabIndex = 10;
+            this.txtDescricao.TabIndex = 1;
             // 
             // cbxUnidadeMedida
             // 
@@ -226,7 +226,7 @@
             this.cbxUnidadeMedida.Location = new System.Drawing.Point(12, 152);
             this.cbxUnidadeMedida.Name = "cbxUnidadeMedida";
             this.cbxUnidadeMedida.Size = new System.Drawing.Size(186, 28);
-            this.cbxUnidadeMedida.TabIndex = 12;
+            this.cbxUnidadeMedida.TabIndex = 2;
             // 
             // label9
             // 
@@ -245,7 +245,7 @@
             this.nudQtdeMinima.Location = new System.Drawing.Point(212, 151);
             this.nudQtdeMinima.Name = "nudQtdeMinima";
             this.nudQtdeMinima.Size = new System.Drawing.Size(100, 31);
-            this.nudQtdeMinima.TabIndex = 14;
+            this.nudQtdeMinima.TabIndex = 3;
             // 
             // nudQtdeAtual
             // 
@@ -254,7 +254,7 @@
             this.nudQtdeAtual.Location = new System.Drawing.Point(326, 151);
             this.nudQtdeAtual.Name = "nudQtdeAtual";
             this.nudQtdeAtual.Size = new System.Drawing.Size(89, 31);
-            this.nudQtdeAtual.TabIndex = 15;
+            this.nudQtdeAtual.TabIndex = 4;
             // 
             // nudQtdeMaxima
             // 
@@ -263,7 +263,7 @@
             this.nudQtdeMaxima.Location = new System.Drawing.Point(436, 151);
             this.nudQtdeMaxima.Name = "nudQtdeMaxima";
             this.nudQtdeMaxima.Size = new System.Drawing.Size(99, 31);
-            this.nudQtdeMaxima.TabIndex = 16;
+            this.nudQtdeMaxima.TabIndex = 5;
             // 
             // label10
             // 
@@ -272,9 +272,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label10.Location = new System.Drawing.Point(209, 130);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 18);
+            this.label10.Size = new System.Drawing.Size(92, 18);
             this.label10.TabIndex = 17;
-            this.label10.Text = "*Qtde Miníma";
+            this.label10.Text = "Qtde Miníma";
             // 
             // label11
             // 
@@ -283,9 +283,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label11.Location = new System.Drawing.Point(323, 130);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 18);
+            this.label11.Size = new System.Drawing.Size(76, 18);
             this.label11.TabIndex = 18;
-            this.label11.Text = "*Qtde Atual";
+            this.label11.Text = "Qtde Atual";
             // 
             // label12
             // 
@@ -294,27 +294,27 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label12.Location = new System.Drawing.Point(433, 130);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 18);
+            this.label12.Size = new System.Drawing.Size(96, 18);
             this.label12.TabIndex = 19;
-            this.label12.Text = "*Qtde Máxima";
+            this.label12.Text = "Qtde Máxima";
             // 
-            // checkBox1
+            // ckbAtivo
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(944, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 24);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Ativo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbAtivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbAtivo.AutoSize = true;
+            this.ckbAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbAtivo.Location = new System.Drawing.Point(944, 19);
+            this.ckbAtivo.Name = "ckbAtivo";
+            this.ckbAtivo.Size = new System.Drawing.Size(63, 24);
+            this.ckbAtivo.TabIndex = 20;
+            this.ckbAtivo.Text = "Ativo";
+            this.ckbAtivo.UseVisualStyleBackColor = true;
             // 
             // gbxInformacoesProduto
             // 
             this.gbxInformacoesProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbxInformacoesProduto.Controls.Add(this.checkBox1);
+            this.gbxInformacoesProduto.Controls.Add(this.ckbAtivo);
             this.gbxInformacoesProduto.Controls.Add(this.label7);
             this.gbxInformacoesProduto.Controls.Add(this.label12);
             this.gbxInformacoesProduto.Controls.Add(this.txtCodigoBarras);
@@ -335,6 +335,7 @@
             this.gbxInformacoesProduto.Controls.Add(this.label8);
             this.gbxInformacoesProduto.Controls.Add(this.txtCodigo);
             this.gbxInformacoesProduto.Controls.Add(this.txtDescricao);
+            this.gbxInformacoesProduto.Enabled = false;
             this.gbxInformacoesProduto.Location = new System.Drawing.Point(12, 94);
             this.gbxInformacoesProduto.Name = "gbxInformacoesProduto";
             this.gbxInformacoesProduto.Size = new System.Drawing.Size(1022, 205);
@@ -400,6 +401,7 @@
             this.btnNovo.TabIndex = 10;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnCancelar
             // 
@@ -436,13 +438,13 @@
             this.dgvDados.Location = new System.Drawing.Point(12, 81);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.Size = new System.Drawing.Size(995, 128);
-            this.dgvDados.TabIndex = 0;
+            this.dgvDados.TabIndex = 2;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label13.Location = new System.Drawing.Point(9, 22);
+            this.label13.Location = new System.Drawing.Point(9, 26);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(233, 18);
             this.label13.TabIndex = 22;
@@ -453,17 +455,17 @@
             this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtPesquisa.Location = new System.Drawing.Point(12, 43);
+            this.txtPesquisa.Location = new System.Drawing.Point(12, 47);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(791, 26);
-            this.txtPesquisa.TabIndex = 21;
+            this.txtPesquisa.TabIndex = 0;
             // 
             // label14
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label14.Location = new System.Drawing.Point(818, 19);
+            this.label14.Location = new System.Drawing.Point(818, 23);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(118, 18);
             this.label14.TabIndex = 22;
@@ -479,10 +481,10 @@
             "Todos",
             "Sim",
             "Não"});
-            this.cbxFiltro.Location = new System.Drawing.Point(821, 41);
+            this.cbxFiltro.Location = new System.Drawing.Point(821, 45);
             this.cbxFiltro.Name = "cbxFiltro";
             this.cbxFiltro.Size = new System.Drawing.Size(186, 28);
-            this.cbxFiltro.TabIndex = 21;
+            this.cbxFiltro.TabIndex = 1;
             // 
             // FrmProduto
             // 
@@ -546,7 +548,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckbAtivo;
         private System.Windows.Forms.GroupBox gbxInformacoesProduto;
         private System.Windows.Forms.GroupBox gbxProdutosCadastrados;
         private System.Windows.Forms.Panel panel1;
