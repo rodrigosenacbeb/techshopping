@@ -121,7 +121,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label4.Location = new System.Drawing.Point(995, 130);
+            this.label4.Location = new System.Drawing.Point(833, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 18);
             this.label4.TabIndex = 6;
@@ -132,7 +132,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(831, 130);
+            this.label3.Location = new System.Drawing.Point(1000, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 18);
             this.label3.TabIndex = 5;
@@ -161,19 +161,19 @@
             // 
             this.txtPreco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtPreco.Location = new System.Drawing.Point(995, 152);
+            this.txtPreco.Location = new System.Drawing.Point(833, 153);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(150, 29);
-            this.txtPreco.TabIndex = 8;
+            this.txtPreco.TabIndex = 7;
             // 
             // txtPercentualLucro
             // 
             this.txtPercentualLucro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPercentualLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtPercentualLucro.Location = new System.Drawing.Point(834, 152);
+            this.txtPercentualLucro.Location = new System.Drawing.Point(1003, 153);
             this.txtPercentualLucro.Name = "txtPercentualLucro";
             this.txtPercentualLucro.Size = new System.Drawing.Size(142, 29);
-            this.txtPercentualLucro.TabIndex = 7;
+            this.txtPercentualLucro.TabIndex = 8;
             // 
             // txtCodigoBarras
             // 
