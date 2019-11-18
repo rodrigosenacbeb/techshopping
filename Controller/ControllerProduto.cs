@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model;
 
 namespace Controller
@@ -36,6 +33,34 @@ namespace Controller
             catch
             {
                 throw new Exception();
+            }
+            finally
+            {
+                acessoDados.Fechar();
+            }
+        }
+
+        public DataTable Carregar(string descricao, string ativo)
+        {
+            string instrucao;
+            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+
+            if (ativo == "Todos")
+                instrucao = "SELECT * FROM Produto WHERE descricao LIKE '%" + descricao + "%'";
+            else
+                instrucao = "SELECT * FROM Produto WHERE descricao LIKE '%" + descricao + "%' AND ativo = '" + ativo + "'";
+            try
+            {                
+                SqlCommand command = new SqlCommand(instrucao, acessoDados.Conectar());
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch(Exception erro)
+            {
+                throw erro;
             }
             finally
             {

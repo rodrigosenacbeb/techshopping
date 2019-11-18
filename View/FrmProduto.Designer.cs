@@ -53,23 +53,34 @@
             this.ckbAtivo = new System.Windows.Forms.CheckBox();
             this.gbxInformacoesProduto = new System.Windows.Forms.GroupBox();
             this.gbxProdutosCadastrados = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbxFiltro = new System.Windows.Forms.ComboBox();
+            this.dgvDados = new System.Windows.Forms.DataGridView();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvDados = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cbxFiltro = new System.Windows.Forms.ComboBox();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigobarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidademedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtdminima = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtdmaxima = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtdatual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custounitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.percentuallucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precovenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtdeMinima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtdeAtual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtdeMaxima)).BeginInit();
             this.gbxInformacoesProduto.SuspendLayout();
             this.gbxProdutosCadastrados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +110,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label5.Location = new System.Drawing.Point(551, 130);
+            this.label5.Location = new System.Drawing.Point(689, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 18);
             this.label5.TabIndex = 7;
@@ -110,7 +121,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label4.Location = new System.Drawing.Point(857, 130);
+            this.label4.Location = new System.Drawing.Point(995, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 18);
             this.label4.TabIndex = 6;
@@ -121,7 +132,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(693, 130);
+            this.label3.Location = new System.Drawing.Point(831, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 18);
             this.label3.TabIndex = 5;
@@ -141,9 +152,8 @@
             // 
             this.txtValorUnitario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtValorUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtValorUnitario.Location = new System.Drawing.Point(554, 152);
+            this.txtValorUnitario.Location = new System.Drawing.Point(692, 152);
             this.txtValorUnitario.Name = "txtValorUnitario";
-            this.txtValorUnitario.PasswordChar = '*';
             this.txtValorUnitario.Size = new System.Drawing.Size(125, 29);
             this.txtValorUnitario.TabIndex = 6;
             // 
@@ -151,7 +161,7 @@
             // 
             this.txtPreco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtPreco.Location = new System.Drawing.Point(857, 152);
+            this.txtPreco.Location = new System.Drawing.Point(995, 152);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(150, 29);
             this.txtPreco.TabIndex = 8;
@@ -160,7 +170,7 @@
             // 
             this.txtPercentualLucro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPercentualLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtPercentualLucro.Location = new System.Drawing.Point(696, 152);
+            this.txtPercentualLucro.Location = new System.Drawing.Point(834, 152);
             this.txtPercentualLucro.Name = "txtPercentualLucro";
             this.txtPercentualLucro.Size = new System.Drawing.Size(142, 29);
             this.txtPercentualLucro.TabIndex = 7;
@@ -209,7 +219,7 @@
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtDescricao.Location = new System.Drawing.Point(401, 78);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(606, 29);
+            this.txtDescricao.Size = new System.Drawing.Size(744, 29);
             this.txtDescricao.TabIndex = 1;
             // 
             // cbxUnidadeMedida
@@ -225,7 +235,7 @@
             "Pacote"});
             this.cbxUnidadeMedida.Location = new System.Drawing.Point(12, 152);
             this.cbxUnidadeMedida.Name = "cbxUnidadeMedida";
-            this.cbxUnidadeMedida.Size = new System.Drawing.Size(186, 28);
+            this.cbxUnidadeMedida.Size = new System.Drawing.Size(324, 28);
             this.cbxUnidadeMedida.TabIndex = 2;
             // 
             // label9
@@ -242,7 +252,7 @@
             // 
             this.nudQtdeMinima.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudQtdeMinima.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudQtdeMinima.Location = new System.Drawing.Point(212, 151);
+            this.nudQtdeMinima.Location = new System.Drawing.Point(350, 151);
             this.nudQtdeMinima.Name = "nudQtdeMinima";
             this.nudQtdeMinima.Size = new System.Drawing.Size(100, 31);
             this.nudQtdeMinima.TabIndex = 3;
@@ -251,7 +261,7 @@
             // 
             this.nudQtdeAtual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudQtdeAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudQtdeAtual.Location = new System.Drawing.Point(326, 151);
+            this.nudQtdeAtual.Location = new System.Drawing.Point(464, 151);
             this.nudQtdeAtual.Name = "nudQtdeAtual";
             this.nudQtdeAtual.Size = new System.Drawing.Size(89, 31);
             this.nudQtdeAtual.TabIndex = 4;
@@ -260,7 +270,7 @@
             // 
             this.nudQtdeMaxima.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudQtdeMaxima.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudQtdeMaxima.Location = new System.Drawing.Point(436, 151);
+            this.nudQtdeMaxima.Location = new System.Drawing.Point(574, 151);
             this.nudQtdeMaxima.Name = "nudQtdeMaxima";
             this.nudQtdeMaxima.Size = new System.Drawing.Size(99, 31);
             this.nudQtdeMaxima.TabIndex = 5;
@@ -270,7 +280,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label10.Location = new System.Drawing.Point(209, 130);
+            this.label10.Location = new System.Drawing.Point(347, 130);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 18);
             this.label10.TabIndex = 17;
@@ -281,7 +291,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label11.Location = new System.Drawing.Point(323, 130);
+            this.label11.Location = new System.Drawing.Point(461, 130);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 18);
             this.label11.TabIndex = 18;
@@ -292,7 +302,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label12.Location = new System.Drawing.Point(433, 130);
+            this.label12.Location = new System.Drawing.Point(571, 130);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 18);
             this.label12.TabIndex = 19;
@@ -303,7 +313,7 @@
             this.ckbAtivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbAtivo.AutoSize = true;
             this.ckbAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbAtivo.Location = new System.Drawing.Point(944, 19);
+            this.ckbAtivo.Location = new System.Drawing.Point(1082, 19);
             this.ckbAtivo.Name = "ckbAtivo";
             this.ckbAtivo.Size = new System.Drawing.Size(63, 24);
             this.ckbAtivo.TabIndex = 20;
@@ -338,7 +348,7 @@
             this.gbxInformacoesProduto.Enabled = false;
             this.gbxInformacoesProduto.Location = new System.Drawing.Point(12, 94);
             this.gbxInformacoesProduto.Name = "gbxInformacoesProduto";
-            this.gbxInformacoesProduto.Size = new System.Drawing.Size(1022, 205);
+            this.gbxInformacoesProduto.Size = new System.Drawing.Size(1160, 205);
             this.gbxInformacoesProduto.TabIndex = 12;
             this.gbxInformacoesProduto.TabStop = false;
             this.gbxInformacoesProduto.Text = "Informações do produto";
@@ -355,10 +365,88 @@
             this.gbxProdutosCadastrados.Controls.Add(this.txtPesquisa);
             this.gbxProdutosCadastrados.Location = new System.Drawing.Point(12, 316);
             this.gbxProdutosCadastrados.Name = "gbxProdutosCadastrados";
-            this.gbxProdutosCadastrados.Size = new System.Drawing.Size(1022, 221);
+            this.gbxProdutosCadastrados.Size = new System.Drawing.Size(1160, 221);
             this.gbxProdutosCadastrados.TabIndex = 13;
             this.gbxProdutosCadastrados.TabStop = false;
             this.gbxProdutosCadastrados.Text = "Produtos cadastrados";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label14.Location = new System.Drawing.Point(956, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(118, 18);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Filtrar por ativos:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label13.Location = new System.Drawing.Point(9, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(233, 18);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Pesquisar produto pela descrição:";
+            // 
+            // cbxFiltro
+            // 
+            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.cbxFiltro.FormattingEnabled = true;
+            this.cbxFiltro.Items.AddRange(new object[] {
+            "Todos",
+            "Sim",
+            "Não"});
+            this.cbxFiltro.Location = new System.Drawing.Point(959, 45);
+            this.cbxFiltro.Name = "cbxFiltro";
+            this.cbxFiltro.Size = new System.Drawing.Size(186, 28);
+            this.cbxFiltro.TabIndex = 1;
+            this.cbxFiltro.SelectedIndexChanged += new System.EventHandler(this.cbxFiltro_SelectedIndexChanged);
+            // 
+            // dgvDados
+            // 
+            this.dgvDados.AllowUserToAddRows = false;
+            this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.codigobarras,
+            this.descricao,
+            this.unidademedida,
+            this.qtdminima,
+            this.qtdmaxima,
+            this.qtdatual,
+            this.custounitario,
+            this.percentuallucro,
+            this.precovenda,
+            this.ativo});
+            this.dgvDados.Location = new System.Drawing.Point(12, 81);
+            this.dgvDados.Name = "dgvDados";
+            this.dgvDados.ReadOnly = true;
+            this.dgvDados.RowHeadersVisible = false;
+            this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDados.Size = new System.Drawing.Size(1133, 128);
+            this.dgvDados.TabIndex = 2;
+            this.dgvDados.DoubleClick += new System.EventHandler(this.dgvDados_DoubleClick);
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPesquisa.Location = new System.Drawing.Point(12, 47);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(929, 26);
+            this.txtPesquisa.TabIndex = 0;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // panel1
             // 
@@ -367,7 +455,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(215)))), ((int)(((byte)(0)))));
             this.panel1.Location = new System.Drawing.Point(-6, 555);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1059, 25);
+            this.panel1.Size = new System.Drawing.Size(1197, 25);
             this.panel1.TabIndex = 0;
             // 
             // btnAtualizar
@@ -379,7 +467,7 @@
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.Image = global::View.Properties.Resources.vcard_edit;
             this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtualizar.Location = new System.Drawing.Point(772, 35);
+            this.btnAtualizar.Location = new System.Drawing.Point(910, 35);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(121, 41);
             this.btnAtualizar.TabIndex = 14;
@@ -395,7 +483,7 @@
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.Image = global::View.Properties.Resources.add;
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(632, 35);
+            this.btnNovo.Location = new System.Drawing.Point(770, 35);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(121, 41);
             this.btnNovo.TabIndex = 10;
@@ -412,7 +500,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::View.Properties.Resources.arrow_undo;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(911, 35);
+            this.btnCancelar.Location = new System.Drawing.Point(1049, 35);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 41);
             this.btnCancelar.TabIndex = 9;
@@ -429,69 +517,89 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // dgvDados
+            // codigo
             // 
-            this.dgvDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDados.Location = new System.Drawing.Point(12, 81);
-            this.dgvDados.Name = "dgvDados";
-            this.dgvDados.Size = new System.Drawing.Size(995, 128);
-            this.dgvDados.TabIndex = 2;
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.Visible = false;
             // 
-            // label13
+            // codigobarras
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label13.Location = new System.Drawing.Point(9, 26);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(233, 18);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Pesquisar produto pela descrição:";
+            this.codigobarras.DataPropertyName = "codigobarras";
+            this.codigobarras.HeaderText = "Código Barras";
+            this.codigobarras.Name = "codigobarras";
+            this.codigobarras.ReadOnly = true;
             // 
-            // txtPesquisa
+            // descricao
             // 
-            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtPesquisa.Location = new System.Drawing.Point(12, 47);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(791, 26);
-            this.txtPesquisa.TabIndex = 0;
+            this.descricao.DataPropertyName = "descricao";
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
             // 
-            // label14
+            // unidademedida
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label14.Location = new System.Drawing.Point(818, 23);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(118, 18);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Filtrar por ativos:";
+            this.unidademedida.DataPropertyName = "unidademedida";
+            this.unidademedida.HeaderText = "Unidade";
+            this.unidademedida.Name = "unidademedida";
+            this.unidademedida.ReadOnly = true;
             // 
-            // cbxFiltro
+            // qtdminima
             // 
-            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.cbxFiltro.FormattingEnabled = true;
-            this.cbxFiltro.Items.AddRange(new object[] {
-            "Todos",
-            "Sim",
-            "Não"});
-            this.cbxFiltro.Location = new System.Drawing.Point(821, 45);
-            this.cbxFiltro.Name = "cbxFiltro";
-            this.cbxFiltro.Size = new System.Drawing.Size(186, 28);
-            this.cbxFiltro.TabIndex = 1;
+            this.qtdminima.DataPropertyName = "qtdminima";
+            this.qtdminima.HeaderText = "Qtd Mínima";
+            this.qtdminima.Name = "qtdminima";
+            this.qtdminima.ReadOnly = true;
+            // 
+            // qtdmaxima
+            // 
+            this.qtdmaxima.DataPropertyName = "qtdmaxima";
+            this.qtdmaxima.HeaderText = "Qtd Máxima";
+            this.qtdmaxima.Name = "qtdmaxima";
+            this.qtdmaxima.ReadOnly = true;
+            // 
+            // qtdatual
+            // 
+            this.qtdatual.DataPropertyName = "qtdatual";
+            this.qtdatual.HeaderText = "Qtd Atual";
+            this.qtdatual.Name = "qtdatual";
+            this.qtdatual.ReadOnly = true;
+            // 
+            // custounitario
+            // 
+            this.custounitario.DataPropertyName = "custounitario";
+            this.custounitario.HeaderText = "Custo Unitário R$";
+            this.custounitario.Name = "custounitario";
+            this.custounitario.ReadOnly = true;
+            // 
+            // percentuallucro
+            // 
+            this.percentuallucro.DataPropertyName = "percentuallucro";
+            this.percentuallucro.HeaderText = "Percentual Lucro R$";
+            this.percentuallucro.Name = "percentuallucro";
+            this.percentuallucro.ReadOnly = true;
+            // 
+            // precovenda
+            // 
+            this.precovenda.DataPropertyName = "precovenda";
+            this.precovenda.HeaderText = "Preço Venda R$";
+            this.precovenda.Name = "precovenda";
+            this.precovenda.ReadOnly = true;
+            // 
+            // ativo
+            // 
+            this.ativo.DataPropertyName = "ativo";
+            this.ativo.HeaderText = "Ativo";
+            this.ativo.Name = "ativo";
+            this.ativo.ReadOnly = true;
             // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1046, 578);
+            this.ClientSize = new System.Drawing.Size(1184, 578);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbxProdutosCadastrados);
@@ -514,8 +622,8 @@
             this.gbxInformacoesProduto.PerformLayout();
             this.gbxProdutosCadastrados.ResumeLayout(false);
             this.gbxProdutosCadastrados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,5 +666,16 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbxFiltro;
         private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigobarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidademedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtdminima;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtdmaxima;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtdatual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custounitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn percentuallucro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precovenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ativo;
     }
 }

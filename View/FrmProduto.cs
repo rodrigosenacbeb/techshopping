@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Controller;
+using System.Data;
 
 namespace View
 {
@@ -17,11 +11,15 @@ namespace View
         public FrmProduto()
         {
             InitializeComponent();
+            //Carrega o filtro todos por padrão.
+            cbxFiltro.SelectedItem = "Todos";
+
+            CarregarProdutos();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            if(btnNovo.Text == "Novo")
+            if (btnNovo.Text == "Novo")
             {
                 btnNovo.Text = "Salvar";
                 btnNovo.Image = Properties.Resources.tick;
@@ -34,7 +32,7 @@ namespace View
                 Produto produto = new Produto();
                 produto.CodigoBarras = txtCodigoBarras.Text;
                 produto.Descricao = txtDescricao.Text;
-                produto.UnidadeMedida = cbxUnidadeMedida.SelectedText;
+                produto.UnidadeMedida = cbxUnidadeMedida.SelectedItem.ToString();
                 produto.QtdMinima = (int)nudQtdeMinima.Value;
                 produto.QtdAtual = (int)nudQtdeAtual.Value;
                 produto.QtdMaxima = (int)nudQtdeMaxima.Value;
@@ -52,6 +50,57 @@ namespace View
                 {
                     MessageBox.Show("PRODUTO CÓDIGO " + codigo + " CADASTRADO COM SUCESSO!");
                 }
+            }
+        }
+
+        void CarregarProdutos()
+        {
+            try
+            {
+                ControllerProduto controllerProduto = new ControllerProduto();
+                DataTable dt = new DataTable();
+                dt = controllerProduto.Carregar(txtPesquisa.Text, cbxFiltro.SelectedItem.ToString());
+                dgvDados.DataSource = dt;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            CarregarProdutos();
+        }
+
+        private void cbxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CarregarProdutos();
+        }
+
+        private void dgvDados_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvDados.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Você precisa selecionar um produto da lista!");
+            }
+            else
+            {
+                txtCodigo.Text = dgvDados.CurrentRow.Cells["codigo"].Value.ToString();
+                txtCodigoBarras.Text = dgvDados.CurrentRow.Cells["codigobarras"].Value.ToString();
+                txtDescricao.Text = dgvDados.CurrentRow.Cells["descricao"].Value.ToString();
+                cbxUnidadeMedida.SelectedItem = dgvDados.CurrentRow.Cells["unidademedida"].Value.ToString();
+                nudQtdeMinima.Value = (int)dgvDados.CurrentRow.Cells["qtdminima"].Value;
+                nudQtdeAtual.Value = (int)dgvDados.CurrentRow.Cells["qtdatual"].Value;
+                nudQtdeMaxima.Value = (int)dgvDados.CurrentRow.Cells["qtdmaxima"].Value;
+                txtValorUnitario.Text = dgvDados.CurrentRow.Cells["custounitario"].Value.ToString();
+                txtPercentualLucro.Text = dgvDados.CurrentRow.Cells["percentuallucro"].Value.ToString();
+                txtPreco.Text = dgvDados.CurrentRow.Cells["precovenda"].Value.ToString();
+
+                if (dgvDados.CurrentRow.Cells["ativo"].Value.ToString() == "Sim")
+                    ckbAtivo.Checked = true;
+                else
+                    ckbAtivo.Checked = false;
             }
         }
     }
