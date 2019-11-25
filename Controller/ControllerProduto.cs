@@ -14,14 +14,13 @@ namespace Controller
             try
             {
                 string instrucao = "";
-
                 if (tipo == "cadastrar")
                 {
                     instrucao = "INSERT INTO Produto (codigobarras, descricao, unidademedida, qtdminima, qtdmaxima, qtdatual, custounitario, percentuallucro, precovenda, ativo) VALUES (@codigobarras, @descricao, @unidademedida, @qtdminima, @qtdmaxima, @qtdatual, @custounitario, @percentuallucro, @precovenda, @ativo); SELECT SCOPE_IDENTITY();";
                 }
                 if (tipo == "atualizar")
                 {
-                    instrucao = "";
+                    instrucao = "UPDATE Produto SET codigobarras=@codigobarras, descricao=@descricao, unidademedida=@unidademedida, qtdminima=@qtdminima, qtdmaxima=@qtdmaxima, qtdatual=@qtdatual, custounitario=@custounitario, percentuallucro=@percentuallucro, precovenda=@precovenda, ativo=@ativo WHERE codigo=@codigo";
                 }
 
                 SqlCommand command = new SqlCommand(instrucao, acessoDados.Conectar());
