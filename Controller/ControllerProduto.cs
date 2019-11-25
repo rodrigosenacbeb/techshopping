@@ -7,15 +7,28 @@ namespace Controller
 {
     public class ControllerProduto
     {
-        public int Cadastrar(Produto produto)
+        public int Persistir(Produto produto, string tipo)
         {
             // Resgata a conexão com o banco de dados.
             AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
             try
             {
-                string instrucao = "INSERT INTO Produto (codigobarras, descricao, unidademedida, qtdminima, qtdmaxima, qtdatual, custounitario, percentuallucro, precovenda, ativo) VALUES (@codigobarras, @descricao, @unidademedida, @qtdminima, @qtdmaxima, @qtdatual, @custounitario, @percentuallucro, @precovenda, @ativo); SELECT SCOPE_IDENTITY();";
+                string instrucao = "";
+
+                if (tipo == "cadastrar")
+                {
+                    instrucao = "INSERT INTO Produto (codigobarras, descricao, unidademedida, qtdminima, qtdmaxima, qtdatual, custounitario, percentuallucro, precovenda, ativo) VALUES (@codigobarras, @descricao, @unidademedida, @qtdminima, @qtdmaxima, @qtdatual, @custounitario, @percentuallucro, @precovenda, @ativo); SELECT SCOPE_IDENTITY();";
+                }
+                if (tipo == "atualizar")
+                {
+                    instrucao = "";
+                }
 
                 SqlCommand command = new SqlCommand(instrucao, acessoDados.Conectar());
+                if (tipo == "atualizar")
+                {
+                    command.Parameters.AddWithValue("@codigo", produto.Codigo);
+                }
                 command.Parameters.AddWithValue("@codigobarras", produto.CodigoBarras);
                 command.Parameters.AddWithValue("@descricao", produto.Descricao);
                 command.Parameters.AddWithValue("@unidademedida", produto.UnidadeMedida);
