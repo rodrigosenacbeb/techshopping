@@ -22,5 +22,11 @@ namespace View
             FrmProduto frmProduto = new FrmProduto();
             frmProduto.ShowDialog();
         }
+
+        private void menuMovimentarEstoque_Click(object sender, EventArgs e)
+        {
+            FrmMovimentacaoEstoque frmMovimentacaoEstoque = new FrmMovimentacaoEstoque();
+            frmMovimentacaoEstoque.ShowDialog();
+        }
     }
 }

@@ -58,6 +58,12 @@
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMovimentacaoEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMovimentacaoEstoque.Designer.cs">
+      <DependentUpon>FrmMovimentacaoEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMovimentacaoEstoque.resx">
+      <DependentUpon>FrmMovimentacaoEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProduto.resx">
       <DependentUpon>FrmProduto.cs</DependentUpon>
@@ -128,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\vcard_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -52,6 +52,7 @@ namespace View
                 btnAtualizar.Enabled = false;
                 txtCodigoBarras.Focus();
                 gbxProdutosCadastrados.Enabled = false;
+                nudQtdeAtual.Enabled = true;
             }
             else
             {
@@ -229,6 +230,7 @@ namespace View
 
             btnNovo.Image = Properties.Resources.add;
             btnAtualizar.Image = Properties.Resources.page_white_edit;
+            lblLembrete.Visible = false;
 
         }
 
@@ -252,6 +254,8 @@ namespace View
                 btnNovo.Enabled = false;
                 txtCodigoBarras.Focus();
                 gbxProdutosCadastrados.Enabled = false;
+                nudQtdeAtual.Enabled = false;
+                lblLembrete.Visible = true;
             }
             else
             {

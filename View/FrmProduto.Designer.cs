@@ -76,6 +76,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblLembrete = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtdeMinima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtdeAtual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtdeMaxima)).BeginInit();
@@ -353,6 +354,7 @@
             // 
             this.gbxInformacoesProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxInformacoesProduto.Controls.Add(this.lblLembrete);
             this.gbxInformacoesProduto.Controls.Add(this.ckbAtivo);
             this.gbxInformacoesProduto.Controls.Add(this.label7);
             this.gbxInformacoesProduto.Controls.Add(this.label12);
@@ -379,7 +381,7 @@
             this.gbxInformacoesProduto.Margin = new System.Windows.Forms.Padding(4);
             this.gbxInformacoesProduto.Name = "gbxInformacoesProduto";
             this.gbxInformacoesProduto.Padding = new System.Windows.Forms.Padding(4);
-            this.gbxInformacoesProduto.Size = new System.Drawing.Size(1547, 252);
+            this.gbxInformacoesProduto.Size = new System.Drawing.Size(1547, 265);
             this.gbxInformacoesProduto.TabIndex = 12;
             this.gbxInformacoesProduto.TabStop = false;
             this.gbxInformacoesProduto.Text = "Informações do produto";
@@ -645,6 +647,17 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // lblLembrete
+            // 
+            this.lblLembrete.AutoSize = true;
+            this.lblLembrete.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblLembrete.Location = new System.Drawing.Point(13, 240);
+            this.lblLembrete.Name = "lblLembrete";
+            this.lblLembrete.Size = new System.Drawing.Size(414, 17);
+            this.lblLembrete.TabIndex = 15;
+            this.lblLembrete.Text = "*A quantidade atual é atualizada pela movimentação do estoque";
+            this.lblLembrete.Visible = false;
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -732,5 +745,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precovenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn ativo;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label lblLembrete;
     }
 }
