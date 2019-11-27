@@ -41,5 +41,35 @@ namespace Controller
                 acessoDados.Fechar();
             }
         }
+
+        public int Movimentar(Movimentacao movimentacao)
+        {            
+            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();           
+            try
+            {
+                string instrucaoEstoque = "INSERT INTO Estoque (quantidade, codigoproduto, data, hora, motivo, acao) VALUES (@quantidade, @codigoproduto, @data, @hora, @motivo, @acao);";
+
+                string instrucaoProduto = "";
+
+                if (movimentacao.Acao == "Entrada")
+                instrucaoProduto = "UPDATE Produto SET qtdatual = qtdatual + @quantidade WHERE codigo = @codigoproduto";
+                else
+                instrucaoProduto = "UPDATE Produto SET qtdatual = qtdatual - @quantidade WHERE codigo = @codigoproduto";
+             
+                SqlCommand command = new SqlCommand(instrucaoEstoque + instrucaoProduto, acessoDados.Conectar());
+                command.Parameters.AddWithValue("@quantidade", movimentacao.Quantidade);
+                command.Parameters.AddWithValue("@codigoproduto", movimentacao.CodigoProduto);
+                command.Parameters.AddWithValue("@data", movimentacao.Data);
+                command.Parameters.AddWithValue("@hora", movimentacao.Hora);
+                command.Parameters.AddWithValue("@motivo", movimentacao.Motivo);
+                command.Parameters.AddWithValue("@acao", movimentacao.Acao);
+
+                return Convert.ToInt32(command.ExecuteNonQuery());
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }           
+        }
     }
 }
