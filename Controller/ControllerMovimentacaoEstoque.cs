@@ -71,5 +71,32 @@ namespace Controller
                 throw erro;
             }           
         }
+
+        public DataTable Listar(string nomeProduto, string acao)
+        {
+            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+            try
+            {
+                if (acao == "Todas")
+                    acao = "";
+
+                string instrucao = "SELECT Estoque.data, Estoque.hora, Estoque.motivo, Estoque.acao, Estoque.quantidade, Produto.descricao as produto, Produto.unidademedida, Produto.qtdatual FROM Estoque INNER JOIN Produto ON(Estoque.codigoproduto = Produto.codigo) WHERE Produto.descricao LIKE '%" + nomeProduto + "%' AND Estoque.acao LIKE '%" + acao +"%'";
+
+                SqlCommand command = new SqlCommand(instrucao, acessoDados.Conectar());
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                acessoDados.Fechar();
+            }
+        }
     }
 }

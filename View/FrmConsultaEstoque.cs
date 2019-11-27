@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controller;
 
 namespace View
 {
@@ -15,6 +16,26 @@ namespace View
         public FrmConsultaEstoque()
         {
             InitializeComponent();
+            cbxFiltro.SelectedItem = "Todas";
+            Carregar();
+        }
+
+        void Carregar()
+        {
+            ControllerMovimentacaoEstoque controllerMovimentacao = new ControllerMovimentacaoEstoque();
+            DataTable dt = controllerMovimentacao.Listar(txtPesquisa.Text, cbxFiltro.SelectedItem.ToString());
+
+            dgvDados.DataSource = dt;
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            Carregar();
+        }
+
+        private void cbxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Carregar();
         }
     }
 }
