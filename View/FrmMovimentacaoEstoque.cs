@@ -17,7 +17,10 @@ namespace View
         public FrmMovimentacaoEstoque()
         {
             InitializeComponent();
+            cbxTipoMovimentacao.SelectedIndex = 0;
         }
+
+      
 
         private void btnCarregar_Click(object sender, EventArgs e)
         {
@@ -31,8 +34,10 @@ namespace View
                 }
                 else
                 {
-                    if (btnCarregar.Text == "Salvar")
+                    if (btnCarregar.Text == "Salvar" && ValidaQuantidade())
                     {
+                        
+
                         Movimentacao movimentacao = new Movimentacao();
                         movimentacao.CodigoProduto = Convert.ToInt32(txtCodigo.Text);
                         movimentacao.Quantidade = Convert.ToInt32(nudQuantidade.Value);
@@ -72,15 +77,15 @@ namespace View
         void Limpar()
         {
             txtCodigoBarras.Text = "";
-            nudQuantidade.Value = 0;
+            nudQuantidade.Value = 1;
             cbxTipoMovimentacao.SelectedIndex = -1;
             rtbMotivo.Text = "";
             txtCodigo.Text = "";
             txtDescricao.Text = "";
             txtUnidadeMedida.Text = "";
-            nudQtdeMinima.Value = 0;
-            nudQtdeAtual.Value = 0;
-            nudQtdeMaxima.Value = 0;
+            nudQtdeMinima.Value = 1;
+            nudQtdeAtual.Value = 1;
+            nudQtdeMaxima.Value = 1;
 
             gbxDetalhesMovimentacao.Enabled = false;
             btnCarregar.Text = "Carregar";
@@ -101,5 +106,28 @@ namespace View
             else
                 lblCaracteres.ForeColor = Color.Black;            
         }
+
+       
+
+        bool ValidaQuantidade()
+        {          
+            
+            if (nudQuantidade.Value >= nudQtdeAtual.Value && cbxTipoMovimentacao.SelectedItem.ToString() == "Saída")
+            {
+                MessageBox.Show("Quantidade indisponível para dar saída no estoque. A quantidade atual deste produto é: " + nudQtdeAtual.Value.ToString());
+                return false;
+            }
+
+
+            int quantidadeTotal = Convert.ToInt32(nudQuantidade.Value) + Convert.ToInt32(nudQtdeAtual.Value);
+
+            if (quantidadeTotal >= nudQtdeMaxima.Value && cbxTipoMovimentacao.SelectedItem.ToString() == "Entrada")
+            {
+                MessageBox.Show("Você não pode dar entrada em uma quantidade maior que o limite do estoque deste produto.");
+                return false;
+            }
+
+            return true;
+        }     
     }
 }

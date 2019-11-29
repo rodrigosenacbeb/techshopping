@@ -28,6 +28,7 @@ namespace Controller
                     produto.QtdMinima = Convert.ToInt32(item["qtdminima"].ToString());
                     produto.QtdMaxima = Convert.ToInt32(item["qtdmaxima"].ToString());
                     produto.QtdAtual = Convert.ToInt32(item["qtdatual"].ToString());
+                    produto.PrecoVenda = Convert.ToDouble(item["precovenda"].ToString());
                 }
 
                 return produto;

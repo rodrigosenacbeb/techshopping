@@ -34,5 +34,11 @@ namespace View
             FrmConsultaEstoque frmConsultaEstoque = new FrmConsultaEstoque();
             frmConsultaEstoque.ShowDialog();
         }
+
+        private void menuNovaVenda_Click(object sender, EventArgs e)
+        {
+            FrmVenda frmVenda = new FrmVenda();
+            frmVenda.Show();
+        }
     }
 }

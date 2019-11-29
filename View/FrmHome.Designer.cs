@@ -34,6 +34,8 @@
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMovimentarEstoque = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistorico = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuNovaVenda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +44,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produtosToolStripMenuItem,
-            this.estoqueToolStripMenuItem});
+            this.estoqueToolStripMenuItem,
+            this.vendasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -88,6 +91,21 @@
             this.menuHistorico.Text = "Histórico de Movimentações";
             this.menuHistorico.Click += new System.EventHandler(this.menuHistorico_Click);
             // 
+            // vendasToolStripMenuItem
+            // 
+            this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuNovaVenda});
+            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.vendasToolStripMenuItem.Text = "Vendas";
+            // 
+            // menuNovaVenda
+            // 
+            this.menuNovaVenda.Name = "menuNovaVenda";
+            this.menuNovaVenda.Size = new System.Drawing.Size(180, 22);
+            this.menuNovaVenda.Text = "Nova Venda";
+            this.menuNovaVenda.Click += new System.EventHandler(this.menuNovaVenda_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,7 +113,7 @@
             this.ClientSize = new System.Drawing.Size(880, 538);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmHome";
             this.Text = "Tech Shopping ::: Tela Inicial";
             this.menuStrip1.ResumeLayout(false);
@@ -113,5 +131,7 @@
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuMovimentarEstoque;
         private System.Windows.Forms.ToolStripMenuItem menuHistorico;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuNovaVenda;
     }
 }

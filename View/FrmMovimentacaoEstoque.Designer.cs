@@ -103,9 +103,9 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(13, 349);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(874, 163);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
@@ -241,9 +241,9 @@
             this.gbxDetalhesMovimentacao.Controls.Add(this.nudQuantidade);
             this.gbxDetalhesMovimentacao.Enabled = false;
             this.gbxDetalhesMovimentacao.Location = new System.Drawing.Point(13, 168);
-            this.gbxDetalhesMovimentacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxDetalhesMovimentacao.Margin = new System.Windows.Forms.Padding(2);
             this.gbxDetalhesMovimentacao.Name = "gbxDetalhesMovimentacao";
-            this.gbxDetalhesMovimentacao.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxDetalhesMovimentacao.Padding = new System.Windows.Forms.Padding(2);
             this.gbxDetalhesMovimentacao.Size = new System.Drawing.Size(874, 161);
             this.gbxDetalhesMovimentacao.TabIndex = 31;
             this.gbxDetalhesMovimentacao.TabStop = false;
@@ -275,7 +275,7 @@
             // 
             this.rtbMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbMotivo.Location = new System.Drawing.Point(247, 50);
-            this.rtbMotivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbMotivo.Margin = new System.Windows.Forms.Padding(2);
             this.rtbMotivo.MaxLength = 200;
             this.rtbMotivo.Name = "rtbMotivo";
             this.rtbMotivo.Size = new System.Drawing.Size(609, 91);
@@ -318,15 +318,27 @@
             this.cbxTipoMovimentacao.Name = "cbxTipoMovimentacao";
             this.cbxTipoMovimentacao.Size = new System.Drawing.Size(201, 28);
             this.cbxTipoMovimentacao.TabIndex = 57;
+
             // 
             // nudQuantidade
             // 
             this.nudQuantidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.nudQuantidade.Location = new System.Drawing.Point(20, 51);
+            this.nudQuantidade.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(200, 29);
             this.nudQuantidade.TabIndex = 58;
+            this.nudQuantidade.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+
             // 
             // txtCodigoBarras
             // 
@@ -405,7 +417,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmMovimentacaoEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
