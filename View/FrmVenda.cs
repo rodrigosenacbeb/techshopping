@@ -2,13 +2,6 @@
 using Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View
@@ -64,6 +57,14 @@ namespace View
         private void txtDesconto_TextChanged(object sender, EventArgs e)
         {
             ValidaDinheiro(txtDesconto);
+            if (this.ValorTotal == Convert.ToDouble(txtDesconto.Text))
+            {
+                MessageBox.Show("Não é possível aplicar desconto maior que o valor da venda!");
+            }
+            else
+            {
+                AtualizaValores();
+            }
         }
 
         private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
@@ -83,7 +84,29 @@ namespace View
             }
             else
             {
+                ControllerVenda controllerVenda = new ControllerVenda();
+                Venda venda = new Venda();
+                venda.ValorTotal = this.ValorTotal;
+                venda.Desconto = Convert.ToDouble(txtDesconto.Text);
 
+                List<Produto> listaProdutos = new List<Produto>();
+
+               
+
+                foreach (DataGridViewRow item in dgvDados.Rows)
+                {
+                    Produto produto = new Produto();
+                    produto.Codigo = Convert.ToInt32(item.Cells["codigoproduto"].Value);
+                    produto.QtdAtual = Convert.ToInt32(item.Cells["quantidade"].Value);
+                    produto.PrecoVenda = Convert.ToDouble(item.Cells["valortotal"].Value);
+                    listaProdutos.Add(produto);
+                }
+
+                bool retorno = controllerVenda.Registrar(venda, listaProdutos);
+                if(retorno == true)
+                {
+                    MessageBox.Show("Venda Finalizada!");
+                }
             }
         }
 
@@ -112,11 +135,18 @@ namespace View
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            double valorTotal = Convert.ToDouble(txtValorUnitario.Text) * Convert.ToInt32(nudQuantidade.Value);            
-            dgvDados.Rows.Add(txtCodigo.Text, txtDescricao.Text, txtValorUnitario.Text, nudQuantidade.Value.ToString(), txtUnidadeMedida.Text, valorTotal.ToString());
+            if (txtCodigo.Text == "")
+            {
+                MessageBox.Show("Você precisa carregar um produto para adicionar na venda!");
+            }
+            else
+            {
+                double valorTotal = Convert.ToDouble(txtValorUnitario.Text) * Convert.ToInt32(nudQuantidade.Value);
+                dgvDados.Rows.Add(txtCodigo.Text, txtDescricao.Text, txtValorUnitario.Text, nudQuantidade.Value.ToString(), txtUnidadeMedida.Text, valorTotal.ToString());
 
-            this.ValorTotal += valorTotal;
-            AtualizaValores();
+                this.ValorTotal += valorTotal;
+                AtualizaValores();
+            }
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -129,7 +159,7 @@ namespace View
             {
                 string valorTotal = dgvDados.CurrentRow.Cells["valortotal"].Value.ToString();
 
-                dgvDados.Rows.Remove(dgvDados.CurrentRow);                
+                dgvDados.Rows.Remove(dgvDados.CurrentRow);
                 this.ValorTotal -= Convert.ToDouble(valorTotal);
                 AtualizaValores();
             }
