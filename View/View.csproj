@@ -171,5 +171,41 @@
   <ItemGroup>
     <None Include="Resources\delete.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positive-vote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\negative-vote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modules.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-bag %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
