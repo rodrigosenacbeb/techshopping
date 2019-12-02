@@ -36,6 +36,7 @@
             this.menuHistorico = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuNovaVenda = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuHistoricoVendas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +95,8 @@
             // vendasToolStripMenuItem
             // 
             this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuNovaVenda});
+            this.menuNovaVenda,
+            this.menuHistoricoVendas});
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.vendasToolStripMenuItem.Text = "Vendas";
@@ -105,6 +107,13 @@
             this.menuNovaVenda.Size = new System.Drawing.Size(180, 22);
             this.menuNovaVenda.Text = "Nova Venda";
             this.menuNovaVenda.Click += new System.EventHandler(this.menuNovaVenda_Click);
+            // 
+            // menuHistoricoVendas
+            // 
+            this.menuHistoricoVendas.Name = "menuHistoricoVendas";
+            this.menuHistoricoVendas.Size = new System.Drawing.Size(180, 22);
+            this.menuHistoricoVendas.Text = "Histórico de Vendas";
+            this.menuHistoricoVendas.Click += new System.EventHandler(this.menuHistoricoVendas_Click);
             // 
             // FrmHome
             // 
@@ -133,5 +142,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuHistorico;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuNovaVenda;
+        private System.Windows.Forms.ToolStripMenuItem menuHistoricoVendas;
     }
 }

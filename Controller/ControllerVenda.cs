@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -53,6 +54,75 @@ namespace Controller
             {
                 acessoDados.Fechar();
             }            
+        }
+
+        public DataTable Carregar(string status, string dataInicial, string dataFinal)
+        {
+            string instrucao;
+            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+            if (status == "Todas")
+                instrucao = "SELECT * FROM Venda WHERE data BETWEEN '" + dataInicial  + "' AND '" + dataFinal + "'";
+            else
+                instrucao = "SELECT * FROM Venda WHERE ativo = '"+ status +"' AND data BETWEEN '" + dataInicial +"' AND '" + dataFinal +"'";
+            try
+            {
+                SqlCommand command = new SqlCommand(instrucao, acessoDados.Conectar());
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                acessoDados.Fechar();
+            }
+        }
+
+        public bool Cancelar(int codigoVenda)
+        {
+            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+            try
+            {
+                // Primeira etapa é MUDAR OS STATUS DA VENDA.
+                string instrucaoVenda = "UPDATE Venda SET ativo = 'Venda Cancelada' WHERE codigo = " + codigoVenda;
+                SqlCommand command = new SqlCommand(instrucaoVenda, acessoDados.Conectar());
+                command.ExecuteNonQuery();
+
+                // Recupera os itens da venda cancelada.                
+                string instrucaoItemsVenda = "SELECT * FROM VendaItem WHERE codigovenda = " + codigoVenda;
+                SqlCommand commandItemsVenda = new SqlCommand(instrucaoItemsVenda, acessoDados.Conectar());
+                SqlDataAdapter da = new SqlDataAdapter(commandItemsVenda);
+                DataTable itemsVenda = new DataTable();
+                da.Fill(itemsVenda);               
+                                                                                           
+                // Devolver os itens no estoque e registrar a movimentação.
+                foreach (DataRow item in itemsVenda.Rows)
+                {
+                    string instrucaoItemVenda = "INSERT INTO Estoque (quantidade, codigoproduto, data, hora, motivo, acao) VALUES (@quantidade, @codigoproduto, @data, @hora, @motivo, @acao); UPDATE Produto SET qtdatual = qtdatual + " + item["quantidade"].ToString();
+
+                   SqlCommand command2 = new SqlCommand(instrucaoItemVenda, acessoDados.Conectar());
+                    command2.Parameters.AddWithValue("@codigoproduto", item["codigoproduto"].ToString());         
+                    command2.Parameters.AddWithValue("@quantidade", item["quantidade"].ToString());               
+                    command2.Parameters.AddWithValue("@data", DateTime.Today.ToShortDateString());
+                    command2.Parameters.AddWithValue("@hora", DateTime.Now.ToShortTimeString());
+                    command2.Parameters.AddWithValue("@motivo", "Venda Cancelada");
+                    command2.Parameters.AddWithValue("@acao", "Entrada");
+                    command2.ExecuteNonQuery(); 
+                }
+                return true;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                acessoDados.Fechar();
+            }
         }
     }
 }

@@ -40,5 +40,11 @@ namespace View
             FrmVenda frmVenda = new FrmVenda();
             frmVenda.Show();
         }
+
+        private void menuHistoricoVendas_Click(object sender, EventArgs e)
+        {
+            FrmConsultaVendas frmConsultaVendas = new FrmConsultaVendas();
+            frmConsultaVendas.ShowDialog();
+        }
     }
 }
