@@ -268,7 +268,7 @@
             // ativo
             // 
             this.ativo.DataPropertyName = "ativo";
-            this.ativo.HeaderText = "Ativo";
+            this.ativo.HeaderText = "Status";
             this.ativo.Name = "ativo";
             this.ativo.ReadOnly = true;
             // 
