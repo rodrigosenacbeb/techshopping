@@ -10,14 +10,12 @@ namespace Controller
     public class AcessoDadosSqlServer
     {
         // String de conexão com o banco de dados.
-        //string parametrosConexao = string.Format(@"Data Source={0}; Initial Catalog={1};User ID={2}; Password={3}",
-        //    Properties.Settings.Default.ServidorBanco,
-        //    Properties.Settings.Default.NomeBanco,
-        //    Properties.Settings.Default.UsuarioBanco,
-        //    Properties.Settings.Default.SenhaBanco);
+        string parametrosConexao = string.Format(@"Data Source={0}; Initial Catalog={1};User ID={2}; Password={3}",
+            Properties.Settings.Default.ServidorBanco,
+            Properties.Settings.Default.NomeBanco,
+            Properties.Settings.Default.UsuarioBanco,
+            Properties.Settings.Default.SenhaBanco);
 
-
-        string parametrosConexao = @"Data Source=BEB0560097W10-1\SQLEXPRESS; Initial Catalog=techshopping;User ID=sa; Password=sa";
 
         SqlConnection conexao = null;
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaVendas));
             this.gbxHistoricoVendas = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFim = new System.Windows.Forms.DateTimePicker();
@@ -36,17 +37,17 @@
             this.label13 = new System.Windows.Forms.Label();
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.dgvDados = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCancelarVenda = new System.Windows.Forms.Button();
-            this.btnVoltar = new System.Windows.Forms.Button();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valortotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCancelarVenda = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.gbxHistoricoVendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -162,6 +163,49 @@
             this.dgvDados.Size = new System.Drawing.Size(963, 370);
             this.dgvDados.TabIndex = 2;
             // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Visible = false;
+            // 
+            // data
+            // 
+            this.data.DataPropertyName = "data";
+            this.data.HeaderText = "Data";
+            this.data.Name = "data";
+            this.data.ReadOnly = true;
+            // 
+            // hora
+            // 
+            this.hora.DataPropertyName = "hora";
+            this.hora.HeaderText = "Hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            // 
+            // valortotal
+            // 
+            this.valortotal.DataPropertyName = "valortotal";
+            this.valortotal.HeaderText = "Valor Total";
+            this.valortotal.Name = "valortotal";
+            this.valortotal.ReadOnly = true;
+            // 
+            // desconto
+            // 
+            this.desconto.DataPropertyName = "desconto";
+            this.desconto.HeaderText = "Desconto";
+            this.desconto.Name = "desconto";
+            this.desconto.ReadOnly = true;
+            // 
+            // ativo
+            // 
+            this.ativo.DataPropertyName = "ativo";
+            this.ativo.HeaderText = "Status";
+            this.ativo.Name = "ativo";
+            this.ativo.ReadOnly = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -229,49 +273,6 @@
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Visible = false;
-            // 
-            // data
-            // 
-            this.data.DataPropertyName = "data";
-            this.data.HeaderText = "Data";
-            this.data.Name = "data";
-            this.data.ReadOnly = true;
-            // 
-            // hora
-            // 
-            this.hora.DataPropertyName = "hora";
-            this.hora.HeaderText = "Hora";
-            this.hora.Name = "hora";
-            this.hora.ReadOnly = true;
-            // 
-            // valortotal
-            // 
-            this.valortotal.DataPropertyName = "valortotal";
-            this.valortotal.HeaderText = "Valor Total";
-            this.valortotal.Name = "valortotal";
-            this.valortotal.ReadOnly = true;
-            // 
-            // desconto
-            // 
-            this.desconto.DataPropertyName = "desconto";
-            this.desconto.HeaderText = "Desconto";
-            this.desconto.Name = "desconto";
-            this.desconto.ReadOnly = true;
-            // 
-            // ativo
-            // 
-            this.ativo.DataPropertyName = "ativo";
-            this.ativo.HeaderText = "Status";
-            this.ativo.Name = "ativo";
-            this.ativo.ReadOnly = true;
-            // 
             // FrmConsultaVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,6 +285,7 @@
             this.Controls.Add(this.gbxHistoricoVendas);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaVendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultaVendas";

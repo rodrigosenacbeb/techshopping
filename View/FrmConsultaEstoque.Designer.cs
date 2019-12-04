@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaEstoque));
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvDados = new System.Windows.Forms.DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cbxFiltro = new System.Windows.Forms.ComboBox();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidademedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdatual = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +41,10 @@
             this.motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbxFiltro = new System.Windows.Forms.ComboBox();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.SuspendLayout();
@@ -106,54 +107,6 @@
             this.dgvDados.Size = new System.Drawing.Size(1053, 342);
             this.dgvDados.TabIndex = 62;
             // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label14.Location = new System.Drawing.Point(876, 82);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 18);
-            this.label14.TabIndex = 65;
-            this.label14.Text = "Filtrar por Ação:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label13.Location = new System.Drawing.Point(9, 83);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(233, 18);
-            this.label13.TabIndex = 66;
-            this.label13.Text = "Pesquisar produto pela descrição:";
-            // 
-            // cbxFiltro
-            // 
-            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.cbxFiltro.FormattingEnabled = true;
-            this.cbxFiltro.Items.AddRange(new object[] {
-            "Todas",
-            "Entrada",
-            "Saída"});
-            this.cbxFiltro.Location = new System.Drawing.Point(879, 103);
-            this.cbxFiltro.Name = "cbxFiltro";
-            this.cbxFiltro.Size = new System.Drawing.Size(186, 28);
-            this.cbxFiltro.TabIndex = 64;
-            this.cbxFiltro.SelectedIndexChanged += new System.EventHandler(this.cbxFiltro_SelectedIndexChanged);
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtPesquisa.Location = new System.Drawing.Point(12, 104);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(849, 26);
-            this.txtPesquisa.TabIndex = 63;
-            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
-            // 
             // descricao
             // 
             this.descricao.DataPropertyName = "produto";
@@ -210,6 +163,54 @@
             this.quantidade.Name = "quantidade";
             this.quantidade.ReadOnly = true;
             // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label14.Location = new System.Drawing.Point(876, 82);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(113, 18);
+            this.label14.TabIndex = 65;
+            this.label14.Text = "Filtrar por Ação:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label13.Location = new System.Drawing.Point(9, 83);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(233, 18);
+            this.label13.TabIndex = 66;
+            this.label13.Text = "Pesquisar produto pela descrição:";
+            // 
+            // cbxFiltro
+            // 
+            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.cbxFiltro.FormattingEnabled = true;
+            this.cbxFiltro.Items.AddRange(new object[] {
+            "Todas",
+            "Entrada",
+            "Saída"});
+            this.cbxFiltro.Location = new System.Drawing.Point(879, 103);
+            this.cbxFiltro.Name = "cbxFiltro";
+            this.cbxFiltro.Size = new System.Drawing.Size(186, 28);
+            this.cbxFiltro.TabIndex = 64;
+            this.cbxFiltro.SelectedIndexChanged += new System.EventHandler(this.cbxFiltro_SelectedIndexChanged);
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPesquisa.Location = new System.Drawing.Point(12, 104);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(849, 26);
+            this.txtPesquisa.TabIndex = 63;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            // 
             // FrmConsultaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +225,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultaEstoque";

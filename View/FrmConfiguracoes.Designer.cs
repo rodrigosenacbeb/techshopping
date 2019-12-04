@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfiguracoes));
             this.pnlDados = new System.Windows.Forms.Panel();
-            this.txtServidor = new System.Windows.Forms.TextBox();
-            this.txtBanco = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtBanco = new System.Windows.Forms.TextBox();
+            this.txtServidor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -66,58 +67,15 @@
             this.pnlDados.Size = new System.Drawing.Size(657, 211);
             this.pnlDados.TabIndex = 2;
             // 
-            // txtServidor
+            // label5
             // 
-            this.txtServidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtServidor.Location = new System.Drawing.Point(11, 39);
-            this.txtServidor.Name = "txtServidor";
-            this.txtServidor.Size = new System.Drawing.Size(635, 29);
-            this.txtServidor.TabIndex = 0;
-            // 
-            // txtBanco
-            // 
-            this.txtBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtBanco.Location = new System.Drawing.Point(11, 104);
-            this.txtBanco.Name = "txtBanco";
-            this.txtBanco.Size = new System.Drawing.Size(635, 29);
-            this.txtBanco.TabIndex = 1;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtUsuario.Location = new System.Drawing.Point(11, 166);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(301, 29);
-            this.txtUsuario.TabIndex = 2;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtSenha.Location = new System.Drawing.Point(340, 166);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(306, 29);
-            this.txtSenha.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label2.Location = new System.Drawing.Point(11, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "*Endereço do servidor:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(11, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 18);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "*Nome do banco de dados:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label5.Location = new System.Drawing.Point(337, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 18);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "*Senha:";
             // 
             // label4
             // 
@@ -129,15 +87,58 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "*Usuário";
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label5.Location = new System.Drawing.Point(337, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 18);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "*Senha:";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label3.Location = new System.Drawing.Point(11, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 18);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "*Nome do banco de dados:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label2.Location = new System.Drawing.Point(11, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "*Endereço do servidor:";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.txtSenha.Location = new System.Drawing.Point(340, 166);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(306, 29);
+            this.txtSenha.TabIndex = 3;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.txtUsuario.Location = new System.Drawing.Point(11, 166);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(301, 29);
+            this.txtUsuario.TabIndex = 2;
+            // 
+            // txtBanco
+            // 
+            this.txtBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.txtBanco.Location = new System.Drawing.Point(11, 104);
+            this.txtBanco.Name = "txtBanco";
+            this.txtBanco.Size = new System.Drawing.Size(635, 29);
+            this.txtBanco.TabIndex = 1;
+            // 
+            // txtServidor
+            // 
+            this.txtServidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.txtServidor.Location = new System.Drawing.Point(11, 39);
+            this.txtServidor.Name = "txtServidor";
+            this.txtServidor.Size = new System.Drawing.Size(635, 29);
+            this.txtServidor.TabIndex = 0;
             // 
             // label6
             // 
@@ -219,6 +220,7 @@
             this.Controls.Add(this.pnlDados);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmConfiguracoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

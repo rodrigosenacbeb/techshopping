@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVenda));
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.gbxDetalhesVenda = new System.Windows.Forms.GroupBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtValorUnitario = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.ckbDesconto = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
@@ -44,6 +49,12 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.dgvDados = new System.Windows.Forms.DataGridView();
+            this.codigoproduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidademedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valortotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtUnidadeMedida = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtQtdAtual = new System.Windows.Forms.TextBox();
@@ -56,16 +67,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnNovaVenda = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtValorUnitario = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.codigoproduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidademedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valortotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxDetalhesVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
@@ -132,6 +133,44 @@
             this.gbxDetalhesVenda.TabIndex = 82;
             this.gbxDetalhesVenda.TabStop = false;
             this.gbxDetalhesVenda.Text = "Detalhes da Venda";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.txtCodigo.Location = new System.Drawing.Point(6, 47);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(107, 29);
+            this.txtCodigo.TabIndex = 107;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label13.Location = new System.Drawing.Point(3, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(60, 18);
+            this.label13.TabIndex = 106;
+            this.label13.Text = "Código:";
+            // 
+            // txtValorUnitario
+            // 
+            this.txtValorUnitario.Enabled = false;
+            this.txtValorUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.txtValorUnitario.Location = new System.Drawing.Point(292, 118);
+            this.txtValorUnitario.Name = "txtValorUnitario";
+            this.txtValorUnitario.Size = new System.Drawing.Size(125, 29);
+            this.txtValorUnitario.TabIndex = 104;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label4.Location = new System.Drawing.Point(289, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 18);
+            this.label4.TabIndex = 105;
+            this.label4.Text = "Valor Unitário R$:";
             // 
             // ckbDesconto
             // 
@@ -314,6 +353,42 @@
             this.dgvDados.Size = new System.Drawing.Size(862, 250);
             this.dgvDados.TabIndex = 91;
             // 
+            // codigoproduto
+            // 
+            this.codigoproduto.HeaderText = "Código Produto";
+            this.codigoproduto.Name = "codigoproduto";
+            this.codigoproduto.ReadOnly = true;
+            // 
+            // produto
+            // 
+            this.produto.HeaderText = "Produto";
+            this.produto.Name = "produto";
+            this.produto.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor Unitário R$";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            this.quantidade.ReadOnly = true;
+            // 
+            // unidademedida
+            // 
+            this.unidademedida.HeaderText = "Unidade de Medida";
+            this.unidademedida.Name = "unidademedida";
+            this.unidademedida.ReadOnly = true;
+            // 
+            // valortotal
+            // 
+            this.valortotal.HeaderText = "Valor Total R$";
+            this.valortotal.Name = "valortotal";
+            this.valortotal.ReadOnly = true;
+            // 
             // txtUnidadeMedida
             // 
             this.txtUnidadeMedida.Enabled = false;
@@ -454,80 +529,6 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // txtValorUnitario
-            // 
-            this.txtValorUnitario.Enabled = false;
-            this.txtValorUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtValorUnitario.Location = new System.Drawing.Point(292, 118);
-            this.txtValorUnitario.Name = "txtValorUnitario";
-            this.txtValorUnitario.Size = new System.Drawing.Size(125, 29);
-            this.txtValorUnitario.TabIndex = 104;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label4.Location = new System.Drawing.Point(289, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 18);
-            this.label4.TabIndex = 105;
-            this.label4.Text = "Valor Unitário R$:";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtCodigo.Location = new System.Drawing.Point(6, 47);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(107, 29);
-            this.txtCodigo.TabIndex = 107;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label13.Location = new System.Drawing.Point(3, 26);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 18);
-            this.label13.TabIndex = 106;
-            this.label13.Text = "Código:";
-            // 
-            // codigoproduto
-            // 
-            this.codigoproduto.HeaderText = "Código Produto";
-            this.codigoproduto.Name = "codigoproduto";
-            this.codigoproduto.ReadOnly = true;
-            // 
-            // produto
-            // 
-            this.produto.HeaderText = "Produto";
-            this.produto.Name = "produto";
-            this.produto.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.HeaderText = "Valor Unitário R$";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            this.quantidade.ReadOnly = true;
-            // 
-            // unidademedida
-            // 
-            this.unidademedida.HeaderText = "Unidade de Medida";
-            this.unidademedida.Name = "unidademedida";
-            this.unidademedida.ReadOnly = true;
-            // 
-            // valortotal
-            // 
-            this.valortotal.HeaderText = "Valor Total R$";
-            this.valortotal.Name = "valortotal";
-            this.valortotal.ReadOnly = true;
-            // 
             // FrmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,6 +541,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVenda";

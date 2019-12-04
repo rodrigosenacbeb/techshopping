@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMovimentacaoEstoque));
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -318,7 +319,6 @@
             this.cbxTipoMovimentacao.Name = "cbxTipoMovimentacao";
             this.cbxTipoMovimentacao.Size = new System.Drawing.Size(201, 28);
             this.cbxTipoMovimentacao.TabIndex = 57;
-
             // 
             // nudQuantidade
             // 
@@ -338,7 +338,6 @@
             0,
             0,
             0});
-
             // 
             // txtCodigoBarras
             // 
@@ -417,6 +416,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmMovimentacaoEstoque";
