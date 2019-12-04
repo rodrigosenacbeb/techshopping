@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controller;
 
 namespace View
 {
@@ -14,7 +8,14 @@ namespace View
     {
         public FrmHome()
         {
-            InitializeComponent();
+            InitializeComponent();           
+        }
+
+        void CarregarNotificacoes()
+        {
+            ControllerMovimentacaoEstoque estoque = new ControllerMovimentacaoEstoque();
+            lblEstoqueMaximo.Text = estoque.QtdeProdutoEstoqueMaximo().ToString();
+            lblEstoqueMinimo.Text = estoque.QtdeProdutoEstoqueMinimo().ToString();
         }
 
         private void btnGerenciarProduto_Click(object sender, EventArgs e)
@@ -60,6 +61,11 @@ namespace View
             {
                 Application.Exit();
             }
+        }
+
+        private void FrmHome_Activated(object sender, EventArgs e)
+        {
+            CarregarNotificacoes();
         }
     }
 }

@@ -44,8 +44,8 @@ namespace Controller
         }
 
         public int Movimentar(Movimentacao movimentacao)
-        {            
-            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();           
+        {
+            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
             try
             {
                 string instrucaoEstoque = "INSERT INTO Estoque (quantidade, codigoproduto, data, hora, motivo, acao) VALUES (@quantidade, @codigoproduto, @data, @hora, @motivo, @acao);";
@@ -53,10 +53,10 @@ namespace Controller
                 string instrucaoProduto = "";
 
                 if (movimentacao.Acao == "Entrada")
-                instrucaoProduto = "UPDATE Produto SET qtdatual = qtdatual + @quantidade WHERE codigo = @codigoproduto";
+                    instrucaoProduto = "UPDATE Produto SET qtdatual = qtdatual + @quantidade WHERE codigo = @codigoproduto";
                 else
-                instrucaoProduto = "UPDATE Produto SET qtdatual = qtdatual - @quantidade WHERE codigo = @codigoproduto";
-             
+                    instrucaoProduto = "UPDATE Produto SET qtdatual = qtdatual - @quantidade WHERE codigo = @codigoproduto";
+
                 SqlCommand command = new SqlCommand(instrucaoEstoque + instrucaoProduto, acessoDados.Conectar());
                 command.Parameters.AddWithValue("@quantidade", movimentacao.Quantidade);
                 command.Parameters.AddWithValue("@codigoproduto", movimentacao.CodigoProduto);
@@ -70,7 +70,7 @@ namespace Controller
             catch (Exception erro)
             {
                 throw erro;
-            }           
+            }
         }
 
         public DataTable Listar(string nomeProduto, string acao)
@@ -81,7 +81,7 @@ namespace Controller
                 if (acao == "Todas")
                     acao = "";
 
-                string instrucao = "SELECT Estoque.data, Estoque.hora, Estoque.motivo, Estoque.acao, Estoque.quantidade, Produto.descricao as produto, Produto.unidademedida, Produto.qtdatual FROM Estoque INNER JOIN Produto ON(Estoque.codigoproduto = Produto.codigo) WHERE Produto.descricao LIKE '%" + nomeProduto + "%' AND Estoque.acao LIKE '%" + acao +"%'";
+                string instrucao = "SELECT Estoque.data, Estoque.hora, Estoque.motivo, Estoque.acao, Estoque.quantidade, Produto.descricao as produto, Produto.unidademedida, Produto.qtdatual FROM Estoque INNER JOIN Produto ON(Estoque.codigoproduto = Produto.codigo) WHERE Produto.descricao LIKE '%" + nomeProduto + "%' AND Estoque.acao LIKE '%" + acao + "%'";
 
                 SqlCommand command = new SqlCommand(instrucao, acessoDados.Conectar());
                 SqlDataAdapter da = new SqlDataAdapter(command);
@@ -89,6 +89,48 @@ namespace Controller
                 da.Fill(dt);
 
                 return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                acessoDados.Fechar();
+            }
+        }
+
+        public int QtdeProdutoEstoqueMaximo()
+        {
+            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+            try
+            {                
+                string instrucao = "SELECT COUNT(codigo) FROM Produto WHERE qtdatual > qtdmaxima";
+
+                SqlCommand command = new SqlCommand(instrucao, acessoDados.Conectar());
+                int retorno = Convert.ToInt32(command.ExecuteScalar());
+                return retorno;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                acessoDados.Fechar();
+            }
+        }
+
+        public int QtdeProdutoEstoqueMinimo()
+        {
+            AcessoDadosSqlServer acessoDados = new AcessoDadosSqlServer();
+            try
+            {
+                string instrucao = "SELECT COUNT(codigo) FROM Produto WHERE qtdatual < qtdminima";
+
+                SqlCommand command = new SqlCommand(instrucao, acessoDados.Conectar());
+                int retorno = Convert.ToInt32(command.ExecuteScalar());
+                return retorno;
             }
             catch (Exception erro)
             {

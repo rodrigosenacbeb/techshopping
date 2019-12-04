@@ -139,6 +139,10 @@ namespace View
             {
                 MessageBox.Show("Você precisa carregar um produto para adicionar na venda!");
             }
+            else if(Convert.ToInt32(txtQtdAtual.Text) < nudQuantidade.Value)
+            {
+                MessageBox.Show("Quantidade indisponível no estoque!");
+            }
             else
             {
                 double valorTotal = Convert.ToDouble(txtValorUnitario.Text) * Convert.ToInt32(nudQuantidade.Value);
